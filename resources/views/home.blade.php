@@ -3,35 +3,12 @@
 @section('mainwindow')
 
 <div class="books">
-    <x-bookcard bookid="1"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="1"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="1"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="1"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    <x-bookcard bookid="2"/>
-    
+@foreach($cardDatas as $cardData) 
+ 
+<x-bookcard bookid="{{$cardData['book_id']}}"/>
+
+@endforeach
+
 </div>
 
 @stop

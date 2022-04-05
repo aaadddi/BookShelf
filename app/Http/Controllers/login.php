@@ -26,6 +26,12 @@ class login extends Controller
        }
        else{
         $req->session()->put('loggedIn', true);
+        $req->session()->put('displayName', DB::table('users')->where('email',$email_to_check)->value('name'));
+        $req->session()->put('loggedInId', DB::table('users')->where('email',$email_to_check)->value('email'));
+        if(DB::table('users')->where('email',session('loggedInId'))->value('address')){
+            $req->session()->put('yourAddress', DB::table('users')->where('email',$email_to_check)->value('address'));
+
+        }
         return redirect('home');
        } 
 
@@ -62,6 +68,9 @@ class login extends Controller
     public function logout(){
         if(session('loggedIn')){
             session()->pull('loggedIn', '');
+            session()->pull('displayName', '');
+            session()->pull('loggedInId', '');
+            session()->pull('yourAddress', '');
             return redirect('/');
         }
     }

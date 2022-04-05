@@ -3,8 +3,8 @@
       box-shadow: 0.001px 0.001px 3px #ff4f5a;
       padding:1em 1em;
       margin:2rem 3rem;
-      max-width:200px;
-        
+     width:200px;
+        transition:all 0.1s ease-in-out;
       /* min-height:800px; */
       height:min-content;
   }
@@ -30,7 +30,7 @@
     padding:4px 0;
   }
   .container>p{
-      margin:auto;
+    
       padding:4px 0;
   }
   .cardbtns>a{
@@ -54,6 +54,12 @@
       background-color:white;
 
   }
+  #loggedCheck{
+      width:100%;
+  }
+  #loggedCheck>button{
+      width:100%;
+  }
 </style>
 <div>
     <div class="container">
@@ -64,9 +70,13 @@
         <h5><u>{{$author}}</u></h5>
         <p>$ {{$price}}</p>
         <div class="cardbtns">
-            <a href=""><button>Buy</button></a>
-            <a href=""><button>Wishlist</button></a>
-            <a href=""><button>Cart</button></a>
+            @if(session('loggedIn'))
+            <a href="buy?id={{$bookid}}"><button>Buy</button></a>
+            <a href="wishlist?id={{$bookid}}"><button>Wishlist</button></a>
+            <a href="cart?id={{$bookid}}"><button>Cart</button></a>
+            @else
+            <a href="/account" id="loggedCheck"><button>Login to buy this book</button></a>
+            @endif
         </div>
     </div>
     <!-- Order your soul. Reduce your wants. - Augustine -->

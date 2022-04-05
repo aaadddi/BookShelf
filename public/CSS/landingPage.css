@@ -12,16 +12,12 @@ h1{
     margin: auto;
     font-weight: 200;
     border-radius: 40px;
-  
+    font-family: 'Pacifico', cursive;
     padding: 10px 40px;
     transition: all 0.4s ease-in-out;
-  
+    
 }
-h1:hover{
-    background-color: green;
-    color: white;
-    cursor: pointer;
-}
+
 .main-container{
     display: flex;
    height: 100vh;
@@ -30,7 +26,7 @@ h1:hover{
    justify-content: space-between;
 }
 .main-container>img{
-    margin-top: -40px;
+    margin-top: -20px;
     max-width: 600px;
     width: 4rem;
     min-width: 400px;

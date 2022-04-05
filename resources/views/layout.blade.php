@@ -16,17 +16,21 @@
 </head>
 <body>
     <div class="nav-bar">
-        <h3>BookShelf</h3>
+        <a href="home"><h3>BookShelf</h3></a>
         <div class="btns">
-            
-            <a href="wishlist"><img src="img/heart.png" alt="" title="Wishlist">
-        
-        </a>
-            <a href="cart"><img src="img/scart.png" alt="" title="Your Cart"></a>
-            <a href="owned"><img src="img/shopping-bag.png" alt="" title="Books owned"></a>
+            @if(session('displayName'))
+            <a href="" id="welcomename">
+                <h6>Welcome,</h6>
+                <h5><u>{{session('displayName')}}</u></h5>
+
+            </a>
+            <a href="wishlistPage"><img src="img/heart.png" alt="" title="Wishlist"> </a>
+            <a href="cartPage"><img src="img/scart.png" alt="" title="Your Cart"></a>
+            <a href="ownedPage"><img src="img/shopping-bag.png" alt="" title="Books owned"></a>
+            @endif
             <a href="account"><img src="img/account.png" alt="" title="Account"></a>
             
-        </div>
+</div>
        
     </div>
     @yield('homebtn')
@@ -36,6 +40,6 @@
         <div class="hello-div"></div>
         <div class="hello-div"></div>
         <div class="hello-div"></div>
-        <div class="hello-div"></div>
+        <div class="he llo-div"></div>
 </body>
 </html>
