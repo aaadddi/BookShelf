@@ -47,7 +47,7 @@ class login extends Controller
             return "Accout exist";
         }
         else{
-            DB::insert('insert into users  values (?, ?,?)', array($semail,$sname,$spass));
+            DB::insert('insert into users  values (?, ?,?,?)', array($semail,$sname,$spass,NULL));
             Mail::send([],[],function($message) use ($semail){
                 $message->to($semail);
                 $message->subject("hello dev");

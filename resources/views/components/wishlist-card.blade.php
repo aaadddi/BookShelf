@@ -60,7 +60,7 @@
     <div class="wishlist-btns">
         <a href=""><button>Buy</button></a>
         <a href=""><button>Cart</button></a>
-        <a href=""><button>Remove</button></a>
+        <a href="removeWishItem?id={{$bookid}}"><button>Remove</button></a>
     </div>
     </div>
 </div>

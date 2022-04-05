@@ -72,9 +72,18 @@ public function showWishListCard(){
     }
     public function addToWishlist(Request $req){
         $bookid = $req->id; 
+        if(session('loggedInId') == DB::table('wishlists')->where('book_id',$bookid)->value('email')){
+            return "Book already in wishlist";
+        }
+        else {
         DB::insert('insert into wishlists  values (?, ?)', array(session('loggedInId'),$bookid));
         return redirect('home');
-    }    
+    } }   
+    public function removeWishItem(Request $req){
+        $bookid = $req->id;
+        DB::delete("delete from wishlists where email= ? AND book_id = ?",[session('loggedInId'),$bookid]);
+        return redirect('wishlistPage');
+    }
     public function addToCart(Request $req){
         $bookid = $req->id; 
         return $bookid;

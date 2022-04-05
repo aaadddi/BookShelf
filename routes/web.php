@@ -40,3 +40,5 @@ Route::post('/changeName',[features::class,'changeName']);
 Route::post('/changePassword',[features::class,'changePassword']);
 Route::post('/deleteAccount',[features::class,'deleteAccount']);
 Route::post('/addAddress',[features::class,'addAddress']);
+
+Route::get('/removeWishItem',[features::class,'removeWishItem']);
