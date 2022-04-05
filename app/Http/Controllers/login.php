@@ -25,7 +25,7 @@ class login extends Controller
         // alert("Wrong Password <a href='loginPage'>Go back</a>");
        }
        else{
-      
+        $req->session()->put('loggedIn', true);
         return redirect('home');
        } 
 
@@ -54,12 +54,18 @@ class login extends Controller
             Cookie::queue('passFill', $spass, 15);
             return redirect('loginPage');
         }
-
        
         
 
        
     }
+    public function logout(){
+        if(session('loggedIn')){
+            session()->pull('loggedIn', '');
+            return redirect('/');
+        }
+    }
+   
     //
 }
   

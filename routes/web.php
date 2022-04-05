@@ -22,4 +22,6 @@ Route::view('loginPage','loginPage');
 Route::post('signUpPage', [login::class,'signUp']);
 Route::view('signUpPage','signUpPage');
 Route::view('home','home');
+Route::view('account','accountPage');
+Route::get('logout',[login::class,'logout']);
 

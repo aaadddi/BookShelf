@@ -24,12 +24,13 @@
         </a>
             <a href="cart"><img src="img/scart.png" alt="" title="Your Cart"></a>
             <a href="owned"><img src="img/shopping-bag.png" alt="" title="Books owned"></a>
-            <a href="account"><img src="img/account.png" alt="" title="logout"></a>
+            <a href="account"><img src="img/account.png" alt="" title="Account"></a>
             
         </div>
        
     </div>
-    @yield('card')
+    @yield('homebtn')
+    @yield('mainwindow')
     
     <div class="hello-div"></div>
         <div class="hello-div"></div>
