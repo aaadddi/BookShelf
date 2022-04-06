@@ -5,6 +5,8 @@ use DB;
 use Illuminate\Http\Request;
 use App\Models\all_book;
 use App\Models\wishlist;
+use App\Models\cart;
+use App\Models\owned;
 class features extends Controller
 {   
     public function showBookCards(){
@@ -18,6 +20,20 @@ public function showWishListCard(){
         return view('wishlist',['cardDatas'=>$cardData]);
         
     }
+    public function showOwnedListCard(){
+    
+        $cardData = owned::all();
+         
+            return view('owned',['cardDatas'=>$cardData]);
+            
+        }
+    public function showCardListCard(){
+    
+        $cardData = cart::all();
+         
+            return view('cart',['cardDatas'=>$cardData]);
+            
+        }
     public function changeName(Request $req){
         $newName = $req->input('newName');
         if(session('loggedIn')){
@@ -67,8 +83,26 @@ public function showWishListCard(){
         }
     }
     public function Buy(Request $req){
+        if(!session('yourAddress')){
+            return "Please add address first to buy this book";
+        }
+
          $bookid = $req->id;
-         return $bookid;
+         return view('buy',['bookid'=>$bookid]);
+    }
+    public function buyBook(Request $req){
+        $buyCode = $req->buyCode;
+        $bookid = $req ->id;
+        if($buyCode != DB::table('all_books')->where('book_id',$bookid)->value('price')){
+            return "Wrong Code entered";
+        }
+        else {
+            DB::delete("delete from wishlists where email = ? AND book_id = ?",[session('loggedInId'),$bookid]);
+            DB::delete("delete from carts where email = ? AND book_id = ?",[session('loggedInId'),$bookid]);
+            DB::insert('insert into owneds  values (?, ?)', array(session('loggedInId'),$bookid));
+            return redirect('ownedPage');
+        }
+       
     }
     public function addToWishlist(Request $req){
         $bookid = $req->id; 
@@ -79,14 +113,31 @@ public function showWishListCard(){
         DB::insert('insert into wishlists  values (?, ?)', array(session('loggedInId'),$bookid));
         return redirect('home');
     } }   
+    public function addToCartlist(Request $req){
+        $bookid = $req->id; 
+        if(session('loggedInId') == DB::table('carts')->where('book_id',$bookid)->value('email')){
+            return "Book already in cart";
+        }
+        else {
+            
+                DB::delete("delete from wishlists where email = ? AND book_id = ?",[session('loggedInId'),$bookid]);
+              
+              
+            
+           
+        DB::insert('insert into carts  values (?, ?)', array(session('loggedInId'),$bookid));
+        return redirect('home');
+    }}
     public function removeWishItem(Request $req){
         $bookid = $req->id;
         DB::delete("delete from wishlists where email= ? AND book_id = ?",[session('loggedInId'),$bookid]);
         return redirect('wishlistPage');
     }
-    public function addToCart(Request $req){
-        $bookid = $req->id; 
-        return $bookid;
+
+    public function removeCartItem(Request $req){
+        $bookid = $req->id;
+        DB::delete("delete from carts where email= ? AND book_id = ?",[session('loggedInId'),$bookid]);
+        return redirect('cartPage');
     }
 
 }

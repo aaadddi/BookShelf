@@ -11,10 +11,11 @@
 @stop
 @section('mainwindow')
 <div>
-   <h1>Your Wishlist</h1> 
+    <h1>Your Cart</h1>
 @foreach($cardDatas as $cardData) 
 @if($cardData['email'] == session('loggedInId'))
-<x-wishlist-card bookid="{{$cardData['book_id']}}"/>
+<x-cart-card bookid="{{$cardData['book_id']}}"/>
+
 @endif
 @endforeach
 

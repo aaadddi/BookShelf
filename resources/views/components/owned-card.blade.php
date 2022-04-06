@@ -1,11 +1,6 @@
 <style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-    }
     .wishlist-container{
-        width:90%;
+        width:50%;
         margin:auto;
     }
     .wish-container{
@@ -53,17 +48,6 @@
         color:#ff4f5a;
         background-color:white;
     }
-    @media only screen and (max-width:500px){
-        .wishlist-details>h4{
-       font-size: 12px;
-    }
-    .wishlist-btns{
-        width:4rem;
-    }
-    .wishlist-btns>a>button{
-        padding:2px 0;
-    }
-    }
 </style>
 <div class="wishlist-container">
 <div class="wish-container">    
@@ -74,9 +58,8 @@
         <h5>$ {{$price}}</h5>
     </div>
     <div class="wishlist-btns">
-        <a href="buy?id={{$bookid}}"><button>Buy</button></a>
-        <a href="cart?id={{$bookid}}"><button>Cart</button></a>
-        <a href="removeWishItem?id={{$bookid}}"><button>Remove</button></a>
+        
+       
     </div>
     </div>
 </div>

@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::post('loginPage',[login::class,'login']);
 Route::view('loginPage','loginPage');
 Route::post('signUpPage', [login::class,'signUp']);
+Route::get('buyBook', [features::class,'buyBook']);
 Route::view('signUpPage','signUpPage');
 
 Route::view('account','accountPage');
@@ -32,13 +33,17 @@ Route::view('addAddressPage','addAddress');
 Route::get('logout',[login::class,'logout']);
 Route::get('home',[features::class,'showBookCards']);
 Route::get('wishlistPage',[features::class,'showWishListCard']);
+Route::get('cartPage',[features::class,'showCardListCard']);
+Route::get('ownedPage',[features::class,'showOwnedListCard']);
 
 Route::get('buy',[features::class,'Buy']);
 Route::get('wishlist',[features::class,'addToWishlist']);
-Route::get('cart',[features::class,'addToCart']);
+Route::get('cart',[features::class,'addToCartlist']);
+
 Route::post('/changeName',[features::class,'changeName']);
 Route::post('/changePassword',[features::class,'changePassword']);
 Route::post('/deleteAccount',[features::class,'deleteAccount']);
 Route::post('/addAddress',[features::class,'addAddress']);
 
 Route::get('/removeWishItem',[features::class,'removeWishItem']);
+Route::get('/removeCartItem',[features::class,'removeCartItem']);
