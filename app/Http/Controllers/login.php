@@ -9,49 +9,76 @@ use DB;
 // use Response;
 // use withCookie;
 class login extends Controller
-{
-    public function login(Request $req){
-    $email_to_check = $req->input('email');
-    $password_to_check = $req->input('password');
-  
-    if(!DB::select("SELECT *FROM users WHERE email = '$email_to_check'")){
-       
-        return "USER NOT FOUND";
-        // alert("Email is not Associated with any account <a href='loginPage'>Go back</a>");
-    }
-    else{
-        if( $password_to_check != DB::table('users')->where('email',$email_to_check)->value('password')){
-           return "Incorrect Password";
-        // alert("Wrong Password <a href='loginPage'>Go back</a>");
-       }
-       else{
-        $req->session()->put('loggedIn', true);
-        $req->session()->put('displayName', DB::table('users')->where('email',$email_to_check)->value('name'));
-        $req->session()->put('loggedInId', DB::table('users')->where('email',$email_to_check)->value('email'));
-        if(DB::table('users')->where('email',session('loggedInId'))->value('address')){
-            $req->session()->put('yourAddress', DB::table('users')->where('email',$email_to_check)->value('address'));
+{   
+    //login
+    public function login(Request $req)
+    {
+        $email_to_check = $req->input('email');
+        $password_to_check = $req->input('password');
 
+        if (!DB::select("SELECT *FROM users WHERE email = '$email_to_check'")) {
+            return 'USER NOT FOUND';
+            // alert("Email is not Associated with any account <a href='loginPage'>Go back</a>");
+        } else {
+            if (
+                $password_to_check !=
+                DB::table('users')
+                    ->where('email', $email_to_check)
+                    ->value('password')
+            ) {
+                return 'Incorrect Password';
+                // alert("Wrong Password <a href='loginPage'>Go back</a>");
+            } else {
+                $req->session()->put('loggedIn', true);
+                $req->session()->put(
+                    'displayName',
+                    DB::table('users')
+                        ->where('email', $email_to_check)
+                        ->value('name')
+                );
+                $req->session()->put(
+                    'loggedInId',
+                    DB::table('users')
+                        ->where('email', $email_to_check)
+                        ->value('email')
+                );
+                if (
+                    DB::table('users')
+                        ->where('email', session('loggedInId'))
+                        ->value('address')
+                ) {
+                    $req->session()->put(
+                        'yourAddress',
+                        DB::table('users')
+                            ->where('email', $email_to_check)
+                            ->value('address')
+                    );
+                }
+                return redirect('home');
+            }
         }
-        return redirect('home');
-       } 
+    }
 
-    }
-    
-    }
-    public function signUp(Request $req){
+    //signup
+    public function signUp(Request $req)
+    {
         $semail = $req->input('sign-email');
         $sname = $req->input('sign-name');
         $spass = $req->input('sign-password');
 
-        if(DB::select("SELECT *FROM users WHERE email = '$semail'")){
-            return "Accout exist";
-        }
-        else{
-            DB::insert('insert into users  values (?, ?,?,?)', array($semail,$sname,$spass,NULL));
-            Mail::send([],[],function($message) use ($semail){
+        if (DB::select("SELECT *FROM users WHERE email = '$semail'")) {
+            return 'Accout exist';
+        } else {
+            DB::insert('insert into users  values (?, ?,?,?)', [
+                $semail,
+                $sname,
+                $spass,
+                null,
+            ]);
+            Mail::send([], [], function ($message) use ($semail) {
                 $message->to($semail);
-                $message->subject("hello dev");
-                $message->setBody("hello dev this is body");
+                $message->subject('hello dev');
+                $message->setBody('hello dev this is body');
             });
             $response = new response();
             // $response->withCookie(cookie('emailFill',$semail));
@@ -60,13 +87,12 @@ class login extends Controller
             Cookie::queue('passFill', $spass, 15);
             return redirect('loginPage');
         }
-       
-        
-
-       
     }
-    public function logout(){
-        if(session('loggedIn')){
+
+    //logout
+    public function logout()
+    {
+        if (session('loggedIn')) {
             session()->pull('loggedIn', '');
             session()->pull('displayName', '');
             session()->pull('loggedInId', '');
@@ -74,8 +100,6 @@ class login extends Controller
             return redirect('/');
         }
     }
-   
+
     //
 }
-  
-
