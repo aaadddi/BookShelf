@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background-color: #ff4f5a;
+}
 .nav-bar{
     background-color: rgba(255, 255, 255, 0.966);
     display: flex;
@@ -11,7 +14,7 @@
     position: sticky;
     top: 0;
     /* box-shadow: 1px 0.1px 5px #FF8235; */
-    box-shadow: 1px 0.1px 5px #ff4f5a;
+    box-shadow: 1px 1px 10px black;
     /* background: linear-gradient(to right,#30E8BF,#FF8235); */
     /* border-bottom: 1px solid #FF8235; */
 }
@@ -42,7 +45,11 @@ a{
 .btns>a>img{
     height: 20px ;
     width: 20px;
+  
+    
 }
+
+
 .hello-div{
     height: 70vh;
 }
@@ -59,9 +66,10 @@ a{
         align-self:center;
         margin:auto;
         border: 1px solid #ff4f5a;
-        
+        background-color:white;
         padding:20px 30px;
-        box-shadow : 0.1px 0.1px 10px #ff4f5a;
+        border-radius:20px;
+        box-shadow : 0.1px 1px 10px black;
     }
 
     .formNameChange>form{
@@ -110,7 +118,7 @@ a{
 
     }
     .homebtn:hover{
-      box-shadow: 0.1px 0.1px 10px #ff4f5a;
+      box-shadow: 0.1px 0.1px 10px black;
         border : 1px solid #ff4f5a;
         
     }
@@ -136,16 +144,18 @@ a{
         width:95%;
         color:#ff4f5a;
         text-align:left;
-        background:transparent;
+        background-color:white;
         padding:6px 20px;
-        border: 0.1px solid #ff4f5a;
+        border-radius:5px;
+        border: 0.1px solid white;
         margin:2px 0;
         transition:all 0.1s ease-in-out;
     }
     .container-A>a>button:hover{
+        box-shadow: 0.00011px 0.00011px 4px black;
         width:100%;
-        background-color:#ff4f5a;
-        color:white;
+        padding-left:30px;
+        
     }
  
     #logbtn>button{
@@ -154,56 +164,9 @@ a{
         margin-top:20px;
         
     }
-    .container{
-        box-shadow: 0.001px 0.001px 3px #ff4f5a;
-        padding:1em 1em;
-        margin:2rem 3rem;
-       width:200px;
-          
-        /* min-height:800px; */
-        height:min-content;
-    }
-    .container:hover{
-      box-shadow: 0.001px 0.001px 30px #ff4f5a;
-    }
-    .container>img{
-        max-height:15rem;
-        object-fit:contain;
-          width:100%;
-        
-    }
-    .container>h4{
-        padding:4px 0px;
-        font-size:15px;
-        font-weight:100;
-        
-      }
-      .container>h5{
-          color:#ff4f5a;
-     
-      font-weight:200;
-      padding:4px 0;
-    }
-    .container>p{
-      
-        padding:4px 0;
-    }
-    .cardbtns>a{
-       margin : 4px 0;
-    }
-    .cardbtns>a>button{
-          margin:4px 0;
-        padding:4px 2px;
-        width:60px;
-        background:#ff4f5a;
-        border:none;
-        cursor:pointer;
-        font-size:10px;
-        color:white;
-        border-radius:20px;
-        border: 1px solid #ff4f5a;
-        transition:all 0.1s ease-in-out;   
-    } 
+   
+   
+
     .cardbtns>a>button:hover{
         color: #ff4f5a;
         background-color:white;

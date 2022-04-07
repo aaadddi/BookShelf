@@ -1,7 +1,7 @@
 <style>
    h1{
       margin:auto;
-      color:#ff4f5a;
+      color:white;
       text-align:center;
    }
 </style>

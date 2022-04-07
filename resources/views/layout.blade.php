@@ -36,10 +36,6 @@
     @yield('homebtn')
     @yield('mainwindow')
     
-    <div class="hello-div"></div>
-        <div class="hello-div"></div>
-        <div class="hello-div"></div>
-        <div class="hello-div"></div>
-        <div class="he llo-div"></div>
+    
 </body>
 </html>

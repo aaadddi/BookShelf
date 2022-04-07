@@ -4,17 +4,27 @@
       padding:1em 1em;
       margin:auto;
      width:300px;
+     background-color:white;
+     border-radius:20px;
         transition:all 0.1s ease-in-out;
       /* min-height:800px; */
       height:min-content;
+      box-shadow: 0.001px 1px 20px black;
   }
-  .container:hover{
-    box-shadow: 0.001px 0.001px 30px #ff4f5a;
+  
+
+  .cover{
+      border-radius:10px;
+      overflow:hidden;
+      
+     width:max-content;
+     margin:auto;
   }
-  .container>img{
+  .cover>img{
       max-height:20rem;
       object-fit:contain;
         width:100%;
+        border-radius:10px;
       
   }
   .container>h4{
@@ -102,8 +112,10 @@
 <div>
     <div class="container">
     
-    
-        <img src="{{$coverlink}}" alt="">
+        <div class="cover">
+
+            <img src="{{$coverlink}}" alt="">
+        </div>
         <h4>{{$title}}</h4>
         <h5><u>{{$author}}</u></h5>
         <p>$ {{$price}}</p>

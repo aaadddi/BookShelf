@@ -1,6 +1,11 @@
 <style>
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
     .wishlist-container{
-        width:50%;
+        width:90%;
         margin:auto;
     }
     .wish-container{
@@ -8,15 +13,19 @@
         align-items:center;
         justify-content:space-between;
         display:flex;
-        height:100px;
+        height:150px;
         width:100%;
         border:1px solid #ff4f5a;
-        padding:10px 10px;
-        box-shadow:0.1px 0.1px 10px #ff4f5a;
+        padding:10px 20px;
+        background-color:white;
+        box-shadow:0.1px 0.1px 10px black;
+        border-radius:10px;
     }
     .wish-container>img{
         height:100%;
         object-fit:contain;
+        
+        border-radius:10px;
     }
     .wishlist-btns{
         display:flex;
@@ -48,6 +57,18 @@
         color:#ff4f5a;
         background-color:white;
     }
+    @media only screen and (max-width:500px){
+        .wishlist-details>h4{
+       font-size: 12px;
+    }
+    .wishlist-btns{
+        width:4rem;
+    }
+    .wishlist-btns>a>button{
+        padding:2px 0;
+    }
+    }
+
 </style>
 <div class="wishlist-container">
 <div class="wish-container">    
