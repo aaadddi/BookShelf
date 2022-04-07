@@ -1,75 +1,70 @@
-a{
+a {
     text-decoration: none;
     color: black;
 }
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-h1{
+h1 {
     color: green;
     margin: auto;
     font-weight: 200;
     border-radius: 40px;
-    font-family: 'Pacifico', cursive;
+    font-family: "Pacifico", cursive;
     padding: 10px 40px;
     transition: all 0.4s ease-in-out;
-    
 }
 
-.main-container{
+.main-container {
     display: flex;
-   height: 100vh;
-   flex-direction: column;
-   align-items: center;
-   justify-content: space-between;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
-.main-container>img{
+.main-container > img {
     margin-top: -20px;
     max-width: 600px;
     width: 4rem;
     min-width: 400px;
     object-fit: contain;
 }
-.lastbtn{
+.lastbtn {
     display: flex;
     margin-bottom: 10px;
 }
-.lasbtn>a{
-
+.lasbtn > a {
     border-radius: 20px;
     margin: 10px 4rem;
 }
 
-.lasbtn>a>button{
+.lasbtn > a > button {
     padding: 5px 20px;
     border: none;
     background: none;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-
 }
-.lasbtn>a>button:hover{
+.lasbtn > a > button:hover {
     background-color: green;
-    color:white;
+    color: white;
 }
 
-.continue-btn>a>button{
+.continue-btn > a > button {
     border-radius: 20px;
     border: none;
     background: none;
     margin-bottom: 30px;
     padding: 5px 20px;
     background-color: green;
-    cursor:pointer;
-    color:white;
+    cursor: pointer;
+    color: white;
     transition: all 0.2s ease-in-out;
 }
-.continue-btn>a>button:hover{
+.continue-btn > a > button:hover {
     padding: 5px 30px;
     font-weight: 400;
-
-
 }

@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+body {
     background-color: #ff4f5a;
 }
-.nav-bar{
+.nav-bar {
     background-color: rgba(255, 255, 255, 0.966);
     display: flex;
     justify-content: space-between;
@@ -19,178 +19,164 @@ body{
     /* border-bottom: 1px solid #FF8235; */
 }
 
-a{
+a {
     text-decoration: none;
 }
-.nav-bar>a>h3{
-    font-family: 'Pacifico', cursive;
+.nav-bar > a > h3 {
+    font-family: "Pacifico", cursive;
 
     color: #ff4f5a;
-
 }
-.btns{
-  display: flex;
+.btns {
+    display: flex;
 }
-.btns>a>h6{
+.btns > a > h6 {
     color: #ff4f5a;
-} 
-.btns>a>h5{
+}
+.btns > a > h5 {
     color: #ff4f5a;
     font-weight: 100;
 }
-.btns>a{
+.btns > a {
     font-size: 0.8rem;
     padding: 0px 1rem;
 }
-.btns>a>img{
-    height: 20px ;
+.btns > a > img {
+    height: 20px;
     width: 20px;
-  
-    
 }
 
-
-.hello-div{
+.hello-div {
     height: 70vh;
 }
-.books{
-    display:flex;
+.books {
+    display: flex;
     flex-wrap: wrap;
-   
+
     justify-content: center;
 }
 
-    .formNameChange{
-        width:70%;
-        align-items:center;
-        align-self:center;
-        margin:auto;
-        border: 1px solid #ff4f5a;
-        background-color:white;
-        padding:20px 30px;
-        border-radius:20px;
-        box-shadow : 0.1px 1px 10px black;
-    }
+.formNameChange {
+    width: 70%;
+    align-items: center;
+    align-self: center;
+    margin: auto;
+    border: 1px solid #ff4f5a;
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0.1px 1px 10px black;
+}
 
-    .formNameChange>form{
-        display:flex;
-        flex-direction:column;
+.formNameChange > form {
+    display: flex;
+    flex-direction: column;
+}
+.formNameChange > form > span {
+    color: #ff4f5a;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+}
+.formNameChange > form > input {
+    width: 70%;
+    background: transparent;
+    padding: 6px 10px;
+    border: none;
+    border-bottom: 1px solid #ff4f5a;
+    margin-bottom: 10px;
+    outline: none;
+}
+.formNameChange > form > button {
+    width: fit-content;
+    cursor: pointer;
+    background-color: #ff4f5a;
+    color: white;
+    border: 1px solid #ff4f5a;
+    padding: 4px 10px;
+    transition: all 0.1s ease-in-out;
+    border-radius: 20px;
+}
+.formNameChange > form > button:hover {
+    color: #ff4f5a;
+    background-color: white;
+}
+.homebtn {
+    height: 2em;
+    width: 2em;
+    background-color: white;
+    border-radius: 20px;
+    padding: 4px 4px;
+    border: 1px solid white;
+    cursor: pointer;
+    margin: 2em 4em;
+    transition: all 0.1s ease-in-out;
+}
+.homebtn:hover {
+    box-shadow: 0.1px 0.1px 10px black;
+    border: 1px solid #ff4f5a;
+}
 
-    }
-    .formNameChange>form>span{
-        color:#ff4f5a;
-        padding:10px 0px;
-        margin-bottom: 10px ;
-    }
-    .formNameChange>form>input{
-        width:70%;
-        background:transparent;
-        padding:6px 10px;
-        border:none;
-        border-bottom:1px solid #ff4f5a;
-        margin-bottom:10px;
-        outline:none;
-    }
-    .formNameChange>form>button{
-        width:fit-content;
-        cursor:pointer;
-        background-color:#ff4f5a;
-        color:white;
-        border:1px solid #ff4f5a;
-        padding: 4px 10px;
-        transition: all 0.1s ease-in-out;
-        border-radius:20px;
-    }
-    .formNameChange>form>button:hover{
-        color:#ff4f5a;
-        background-color:white;
-    }
-    .homebtn{
-        height:2em;
-        width:2em;
-        background-color:white;
-        border-radius:20px;
-        padding:4px 4px;
-        border:1px solid white;
-        cursor:pointer;
-        margin:2em 4em;
-        transition:all 0.1s ease-in-out; 
+.homebtn > img {
+    height: 100%;
+    width: 100%;
+}
+.container-A {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* border:1px solid #ff4f5a; */
+}
+.conatiner-A > a {
+    width: 100%;
+    height: 2rem;
+}
+.container-A > a > button {
+    cursor: pointer;
+    width: 95%;
+    color: #ff4f5a;
+    text-align: left;
+    background-color: white;
+    padding: 6px 20px;
+    border-radius: 5px;
+    border: 0.1px solid white;
+    margin: 2px 0;
+    transition: all 0.1s ease-in-out;
+}
+.container-A > a > button:hover {
+    box-shadow: 0.00011px 0.00011px 4px black;
+    width: 100%;
+    padding-left: 30px;
+}
 
-    }
-    .homebtn:hover{
-      box-shadow: 0.1px 0.1px 10px black;
-        border : 1px solid #ff4f5a;
-        
-    }
-   
-    .homebtn>img{
-        height:100%;
-        width:100%;
-    }
-    .container-A{
-        width:70%;
-        margin:auto;
-        display:flex;
-        flex-direction:column;
-        /* border:1px solid #ff4f5a; */
-    }
-    .conatiner-A>a{
-        width:100%;
-        height:2rem;
-       
-    }
-    .container-A>a>button{
-        cursor:pointer;
-        width:95%;
-        color:#ff4f5a;
-        text-align:left;
-        background-color:white;
-        padding:6px 20px;
-        border-radius:5px;
-        border: 0.1px solid white;
-        margin:2px 0;
-        transition:all 0.1s ease-in-out;
-    }
-    .container-A>a>button:hover{
-        box-shadow: 0.00011px 0.00011px 4px black;
-        width:100%;
-        padding-left:30px;
-        
-    }
- 
-    #logbtn>button{
-        color:white;
-        background-color:#ff4f5a;
-        margin-top:20px;
-        
-    }
-   
-   
+#logbtn > button {
+    color: white;
+    background-color: #ff4f5a;
+    margin-top: 20px;
+}
 
-    .cardbtns>a>button:hover{
-        color: #ff4f5a;
-        background-color:white;
-  
+.cardbtns > a > button:hover {
+    color: #ff4f5a;
+    background-color: white;
+}
+#loggedCheck {
+    width: 100%;
+}
+#loggedCheck > button {
+    width: 100%;
+}
+@media only screen and (max-width: 500px) {
+    .nav-bar {
+        padding: 8px 10px;
     }
-    #loggedCheck{
-        width:100%;
+    .btns > a {
+        padding: 0 0.3rem;
     }
-    #loggedCheck>button{
-        width:100%;
-    }
-@media only screen and (max-width:500px){
-    .nav-bar{
-        padding:8px 10px;
-    }
-    .btns>a{
-        padding:0 0.3rem;
-    }
-    .nav-bar>a>h3{
+    .nav-bar > a > h3 {
         font-size: 90%;
     }
-    .btns>a>img{
-        height: 18px ;
+    .btns > a > img {
+        height: 18px;
         width: 18px;
     }
-   
 }

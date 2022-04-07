@@ -16,14 +16,22 @@ class buyCard extends Component
     public $coverlink;
     public $author;
     public $price;
-   
+
     public function __construct($bookid)
     {
         $this->bookid = $bookid;
-        $this->title = DB::table('all_books')->where('book_id',$bookid)->value('title');
-        $this->coverlink = DB::table('all_books')->where('book_id',$bookid)->value('cover_link');
-        $this->author = DB::table('all_books')->where('book_id',$bookid)->value('author');
-        $this->price = DB::table('all_books')->where('book_id',$bookid)->value('price');
+        $this->title = DB::table('all_books')
+            ->where('book_id', $bookid)
+            ->value('title');
+        $this->coverlink = DB::table('all_books')
+            ->where('book_id', $bookid)
+            ->value('cover_link');
+        $this->author = DB::table('all_books')
+            ->where('book_id', $bookid)
+            ->value('author');
+        $this->price = DB::table('all_books')
+            ->where('book_id', $bookid)
+            ->value('price');
     }
 
     /**
