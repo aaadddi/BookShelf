@@ -11,8 +11,8 @@
         Enter new name:
     </span>
         <input type="text" name="newName" required>
-        @error('sign-name')
-            <span style="color:red">Name not valid</span>
+        @error('newName')
+            <span style="color:red" style="size=1em">Name not valid</span>
             <br>
             @enderror
         <button>Change Name</button>
