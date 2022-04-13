@@ -37,7 +37,11 @@ class features extends Controller
 
     //Account Features
     public function changeName(Request $req)
-    {
+    {    $req->validate([
+            
+        'newName' => 'string|regex:/^[A-Za-z_ ]+$/',
+
+    ]);
         $newName = $req->input('newName');
         if (session('loggedIn')) {
             if (

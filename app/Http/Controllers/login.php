@@ -12,7 +12,8 @@ class login extends Controller
 {   
     //login
     public function login(Request $req)
-    {
+    {   
+       
         $email_to_check = $req->input('email');
         $password_to_check = $req->input('password');
 
@@ -61,7 +62,12 @@ class login extends Controller
 
     //signup
     public function signUp(Request $req)
-    {
+    {    
+        $req->validate([
+            
+            'sign-name' => 'string|regex:/^[A-Za-z_ ]+$/',
+
+        ]);
         $semail = $req->input('sign-email');
         $sname = $req->input('sign-name');
         $spass = $req->input('sign-password');
@@ -77,8 +83,8 @@ class login extends Controller
             ]);
             Mail::send([], [], function ($message) use ($semail) {
                 $message->to($semail);
-                $message->subject('hello dev');
-                $message->setBody('hello dev this is body');
+                $message->subject('Welcome to bookshelf');
+                $message->setBody('Thanks for registering on bookshelf We welcome you to bookshelf');
             });
             $response = new response();
             // $response->withCookie(cookie('emailFill',$semail));

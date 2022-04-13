@@ -11,11 +11,15 @@
     <div class="main-container">
         <form action="signUpPage" method="POST">
             @csrf   
-            
+           
             <span>Email</span>
             <input type="email" name="sign-email" required>
             <span>Name</span>
             <input type="text" name="sign-name" required>
+            @error('sign-name')
+            <span style="color:red">Name not valid</span>
+            <br>
+            @enderror
             <span>Make Password</span>
             <input type="password" name="sign-password" required>
             <button type="submit">Submit</button>
